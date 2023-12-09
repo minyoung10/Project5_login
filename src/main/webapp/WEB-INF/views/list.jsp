@@ -82,7 +82,7 @@
         </a>
         <span>
             <button type="button" class="btn btn-light" onclick="location.href='add'" style="margin-right: 8px">추가하기</button>
-            <button type="button" class="btn btn-secondary" onclick="location.href='login/logout'" style="margin-right: 20px">logout</button>
+            <button type="button" class="btn btn-secondary" onclick="location.href='login/login'" style="margin-right: 20px">로그아웃</button>
 			</span>
     </div>
 </nav>
