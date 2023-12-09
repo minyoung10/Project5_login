@@ -5,14 +5,14 @@
 
 <mapper namespace="BoardDAO">
     <insert id="insertBoard">
-        insert into BOOK (title, writer, username, content, publisher, publication_date, price, phone)
+        insert into BOOK (title, writer, username, content, publisher, publication_date, price, phone, genre, direct, bookCondition)
         values
-        (#{title},  #{writer}, #{username}, #{content}, #{publisher}, #{publication_date}, #{price}, #{phone})
+        (#{title}, #{writer}, #{username}, #{content}, #{publisher}, #{publication_date}, #{price}, #{phone}, #{genre}, #{direct}, #{bookCondition})
     </insert>
     <update id="updateBoard">
         update BOOK
         set title=#{title}, content=#{content}, writer=#{writer}, username=#{username}, publisher=#{publisher},
-            publication_date=#{publication_date}, price=#{price}, phone=#{phone}
+        publication_date=#{publication_date}, price=#{price}, phone=#{phone}, genre=#{genre}, direct=#{direct}, bookCondition=#{bookCondition}
         where seq=#{seq}
     </update>
     <delete id="deleteBoard">

@@ -10,7 +10,14 @@
 
 <html>
 <head>
-    <title>게시판</title>
+    <script src="https://kit.fontawesome.com/e879e74340.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+    <title>Mandarin</title>
 
     <style>
         #title{
@@ -27,6 +34,7 @@
         .container{
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             background-color: white;
             grid-gap: 20px;
         }
@@ -35,7 +43,7 @@
             margin-top: 30px;
             width: 300px;
             height: 300px;
-            border: 5px solid gray;
+            border: 5px solid rgb(128, 128, 128);
             border-radius: 5%;
             background-color: white;
         }
@@ -56,39 +64,45 @@
             width: 150px;
             margin: 5px;
             text-align: center;
-            font-size: 20px;
+            font-size: 16px;
             border: 2px solid rgb(128, 128, 128);
             border-radius: 10px;
         }
         #one_line{
             margin: 10px;
             margin-top: 40px;
-            margin-left: 50px;
-        }
-
+            margin-left: 50px;}
     </style>
 </head>
 <body>
-<h1>중고책 거래 게시판</h1>
+<nav class="navbar navbar-light" id="topbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <Label id="title">Mandarin 중고책 거래</Label>
+        </a>
+        <span>
+            <button type="button" class="btn btn-light" onclick="location.href='add'" style="margin-right: 8px">추가하기</button>
+            <button type="button" class="btn btn-secondary" onclick="location.href='login/logout'" style="margin-right: 20px">logout</button>
+			</span>
+    </div>
+</nav>
 <div class="container">
     <c:forEach items="${list}" var="u">
         <div id="block">
-<%--            <div id="block_img">--%>
-<%--                <img src="./img/pyree.png" width="200" />--%>
-<%--            </div>--%>
             <div id="block_text">
-                <h4><a href="view/${u.seq}">${u.title}</a></h4>
-                <h4>저자 : ${u.writer}</h4>
-                <h4>출판사 :${u.publisher}</h4>
-                <h4>등록자 : ${u.username}</h4>
-                <h4>가격 : ${u.price}</h4>
-<%--                <h4>등록 일자 : ${u.regdate}</h4>--%>
-                <h4><a href="editform/${u.seq}">Edit</a></h4>
-                <h4><a href="javascript:delete_ok('${u.seq}')">Delete</a></h4>
+                <br>
+                <h4 style="font-size: 18px;"><a href="view/${u.seq}">${u.title}</a></h4>
+                <h4 style="font-size: 16px;">저자 : ${u.writer}</h4>
+                <h4 style="font-size: 16px;">가격 : ${u.price}원</h4>
+                <h4 style="font-size: 16px;">책 상태 : ${u.bookCondition}</h4>
+                <h4 style="font-size: 16px;">판매자 : ${u.username}</h4>
+                <h4 style="font-size: 16px;">연락처 : ${u.phone}</h4>
+                <h4 style="font-size: 16px;">직접거래 가능여부 : ${u.direct}</h4>
+                <h4 style="font-size: 14px;"><a href="editform/${u.seq}">수정하기</a></h4>
+                <h4 style="font-size: 14px;"><a href="javascript:delete_ok('${u.seq}')">삭제하기</a></h4>
             </div>
         </div>
     </c:forEach>
 </div>
-<br/><a href="add">새로운 글 쓰기</a>
 </body>
 </html>

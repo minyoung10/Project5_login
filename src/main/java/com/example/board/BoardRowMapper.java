@@ -20,6 +20,9 @@ class BoardRowMapper implements RowMapper<BoardVO> {
         one.setUsername(rs.getString("username"));
         one.setPublisher(rs.getString("publisher"));
         one.setPublication_date(rs.getString("publication_date"));
+        one.setGenre(rs.getString("genre"));
+        one.setDirect(rs.getBoolean("direct"));
+        one.setBookCondition(rs.getString("bookCondition"));
         return one;
     }
 

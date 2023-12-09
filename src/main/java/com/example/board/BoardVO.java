@@ -13,7 +13,10 @@ public class BoardVO {
     private String price;
     private String content;
     private Date regdate;
+    private String genre;
+    private String bookCondition;
 
+    private boolean direct;
     public String getUsername() {
         return username;
     }
@@ -54,4 +57,23 @@ public class BoardVO {
     public void setContent(String content) {this.content = content;}
     public Date getRegdate() {return regdate;}
     public void setRegdate(Date regdate) {this.regdate = regdate;}
+
+    public String getGenre() {return genre;}
+
+    public void setGenre(String genre) {this.genre = genre;}
+    public boolean isDirect() {
+        return direct;
+    }
+
+    public void setDirect(boolean direct) {
+        this.direct = direct;
+    }
+    public String getBookCondition() {
+        return bookCondition;
+    }
+
+    public void setBookCondition(String bookCondition) {
+        this.bookCondition = bookCondition;
+    }
+
 }
